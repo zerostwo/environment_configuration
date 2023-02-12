@@ -42,7 +42,7 @@ curl -O https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-
 # Mouse
 curl -O https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-mm10-2020-A-2.0.0.tar.gz
 
-gzip -d ./*.gz
+tar -xzvf ./*tar.gz
 
 # -----------------------------------------------------------------------------
 # 3. cisTarget resources

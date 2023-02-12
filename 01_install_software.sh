@@ -11,7 +11,7 @@ conda create -p ${WORKING_DIR}/r/4.2.2 -c conda-forge r-base=4.2.2 r-seurat r-de
 conda create -p ${WORKING_DIR}/sratoolkit/2.5.7 -c bioconda sratoolkit=2.5.7 -y
 conda create -p ${WORKING_DIR}/parallel-fastq-dump/0.6.7 -c bioconda parallel-fastq-dump=0.6.7 -y
 # -----------------------------------------------------------------------------
-# Quality control 
+# Quality control
 conda create -p ${WORKING_DIR}/fastqc/0.11.9 -c bioconda fastqc=0.11.9 -y
 conda create -p ${WORKING_DIR}/fastp/0.23.2 -c bioconda fastp=0.23.2 -y
 conda create -p ${WORKING_DIR}/fastq-pair/1.0 -c bioconda fastq-pair=1.0 -y
@@ -19,7 +19,7 @@ conda create -p ${WORKING_DIR}/fastq-screen/0.15.2 -c bioconda fastq-screen=0.15
 conda create -p ${WORKING_DIR}/trim-galore/0.6.10 -c bioconda trim-galore=0.6.10 -y
 conda create -p ${WORKING_DIR}/trimmomatic/0.39 -c bioconda trimmomatic=0.39 -y
 # -----------------------------------------------------------------------------
-# Mapping 
+# Mapping
 conda create -p ${WORKING_DIR}/hisat2/0.2.2 -c bioconda hisat2=2.2.1 -y
 conda create -p ${WORKING_DIR}/tophat/2.1.1 -c bioconda tophat=2.1.1 -y
 conda create -p ${WORKING_DIR}/bowtie2/2.5.1 -c bioconda bowtie2=2.5.1 -y
@@ -48,7 +48,7 @@ conda create -p ${WORKING_DIR}/snakemake/7.21.0 -c bioconda snakemake=7.21.0 -y
 conda create -p ${WORKING_DIR}/samtools/1.16.1 -c bioconda samtools=1.16.1 -y
 conda create -p ${WORKING_DIR}/sambamba/1.0 -c bioconda sambamba=1.0 -y
 conda create -p ${WORKING_DIR}/picard/2.27.5 -c bioconda picard=2.27.5 -y
-conda create -p ${WORKING_DIR}/umi_tools/1.1.2 -c bioconda umi_tools=1.1.2 -y
+# conda create -p ${WORKING_DIR}/umi_tools/1.1.2 -c bioconda umi_tools=1.1.2 -y
 conda create -p ${WORKING_DIR}/environment-modules/5.1.1 -c bioconda environment-modules=5.1.1 -y
 # -----------------------------------------------------------------------------
 # MeRIP-seq
@@ -87,21 +87,14 @@ conda create -p ${WORKING_DIR}/celltypist/1.3.0 -c bioconda celltypist=1.3.0 -y
 # pySCENIC
 PYSCENIC=${WORKING_DIR}/pyscenic/0.12.1
 conda create -p $PYSCENIC python=3.10 -y
-conda activate $PYSCENIC
-pip install pyscenic==0.12.1
-conda deactivate
+${WORKING_DIR}/pyscenic/0.12.1/bin/pip install pyscenic==0.12.1
 # CellPhoneDB
 CELLPHONEDB=${WORKING_DIR}/cellphonedb/3.1.0
 conda create -p $CELLPHONEDB python=3.7 -y
-conda activate $CELLPHONEDB
-pip install cellphonedb==3.1.0
-conda deactivate
+${WORKING_DIR}/cellphonedb/3.1.0/bin/pip install cellphonedb==3.1.0
 # CellBender
 CELLBENDER=${WORKING_DIR}/cellbender/0.2.2
-conda create -p $CELLBENDER python=3.7 -y
-conda activate $CELLBENDER
-conda install pytables -y
-conda install pytorch torchvision -c pytorch -y
+conda create -p $CELLBENDER python=3.7 pytorch torchvision pytables -c conda-forge -y
 cd $CELLBENDER
 git clone https://github.com/broadinstitute/CellBender.git
-pip install -e CellBender
+${WORKING_DIR}/cellbender/0.2.2/bin/pip install -e CellBender
