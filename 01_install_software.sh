@@ -5,7 +5,7 @@ WORKING_DIR=$1
 
 # -----------------------------------------------------------------------------
 # R
-conda create -p ${WORKING_DIR}/r/4.2.2 -c conda-forge r-base=4.2.2 r-seurat r-devtools r-tidyverse r-hdf5r gcc libcxx -y
+conda create -p ${WORKING_DIR}/r/4.2.2 -c conda-forge r-base=4.2.2 r-seurat r-devtools r-tidyverse r-hdf5r gcc libcxx r-biocmanager -y
 # -----------------------------------------------------------------------------
 # Download data
 conda create -p ${WORKING_DIR}/sratoolkit/2.5.7 -c bioconda sratoolkit=2.5.7 -y

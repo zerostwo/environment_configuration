@@ -10,7 +10,7 @@ BOWTIE2_PATH=$6
 # -----------------------------------------------------------------------------
 # hisat2
 module load hisat2/0.2.2
-INDEX_PATH=${WORKING_DIR}/index/hisat2/$SPECIES
+INDEX_PATH=${WORKING_DIR}/hisat2/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
 hisat2-build -p $N_CORES $GENOME_PATH genome
@@ -18,7 +18,7 @@ hisat2-build -p $N_CORES $GENOME_PATH genome
 # -----------------------------------------------------------------------------
 # bowtie2
 module load bowtie2/2.5.1
-INDEX_PATH=${WORKING_DIR}/index/bowtie2/$SPECIES
+INDEX_PATH=${WORKING_DIR}/bowtie2/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
 bowtie2-build --threads $N_CORES $GENOME_PATH genome
@@ -26,7 +26,7 @@ bowtie2-build --threads $N_CORES $GENOME_PATH genome
 # -----------------------------------------------------------------------------
 # kallisto
 module load kallisto/0.48.0
-INDEX_PATH=${WORKING_DIR}/index/kallisto/$SPECIES
+INDEX_PATH=${WORKING_DIR}/kallisto/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
 kallisto index $GENOME_PATH -i genome
@@ -34,7 +34,7 @@ kallisto index $GENOME_PATH -i genome
 # -----------------------------------------------------------------------------
 # salmon
 module load salmon/1.9.0
-INDEX_PATH=${WORKING_DIR}/index/salmon/$SPECIES
+INDEX_PATH=${WORKING_DIR}/salmon/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
 salmon index --threads $N_CORES -t $GENOME_PATH -i genome
@@ -42,7 +42,7 @@ salmon index --threads $N_CORES -t $GENOME_PATH -i genome
 # -----------------------------------------------------------------------------
 # bismark
 module load bismark/0.24.0
-INDEX_PATH=${WORKING_DIR}/index/bismark/$SPECIES
+INDEX_PATH=${WORKING_DIR}/bismark/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
 ln -s $GENOME_PATH ./
@@ -54,7 +54,7 @@ bismark_genome_preparation \
 # -----------------------------------------------------------------------------
 # star
 module load star/2.7.10b
-INDEX_PATH=${WORKING_DIR}/index/star/$SPECIES
+INDEX_PATH=${WORKING_DIR}/star/$SPECIES
 STAR \
   --runThreadN $N_CORES \
   --runMode genomeGenerate \
