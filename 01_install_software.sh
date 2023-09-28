@@ -12,7 +12,7 @@ mamba create -p ${WORKING_DIR}/sratoolkit/2.5.7 -c daler sratoolkit=2.5.7 -y
 mamba create -p ${WORKING_DIR}/parallel-fastq-dump/0.6.7 -c bioconda parallel-fastq-dump=0.6.7 -y
 # -----------------------------------------------------------------------------
 # Quality control
-mamba create -p ${WORKING_DIR}/fastp/0.23.3 -c bioconda fastp=0.23.3 -y
+mamba create -p ${WORKING_DIR}/fastp/0.23.4 -c bioconda fastp=0.23.4 -y
 mamba create -p ${WORKING_DIR}/fastqc/0.12.1 -c bioconda fastqc=0.12.1 -y
 mamba create -p ${WORKING_DIR}/fastq-pair/1.0 -c bioconda fastq-pair=1.0 -y
 mamba create -p ${WORKING_DIR}/fastq-screen/0.15.3 -c bioconda fastq-screen=0.15.3 -y
@@ -27,7 +27,7 @@ mamba create -p ${WORKING_DIR}/bwa/0.7.17 -c bioconda bwa=0.7.17 -y
 mamba create -p ${WORKING_DIR}/bbmap/39.01 -c bioconda bbmap=39.01 -y
 # -----------------------------------------------------------------------------
 # Quantification
-mamba create -p ${WORKING_DIR}/subread/2.0.3 -c bioconda subread=2.0.3 -y
+mamba create -p ${WORKING_DIR}/subread/2.0.6 -c bioconda subread=2.0.6 -y
 mamba create -p ${WORKING_DIR}/htseq/2.0.3 -c bioconda htseq=2.0.3 -y
 mamba create -p ${WORKING_DIR}/cufflinks/2.2.1 -c bioconda cufflinks=2.2.1 -y
 mamba create -p ${WORKING_DIR}/stringtie/2.2.1 -c bioconda stringtie=2.2.1 -y
@@ -41,10 +41,10 @@ mamba create -p ${WORKING_DIR}/rmats2sashimiplot/2.0.4 -c bioconda rmats2sashimi
 mamba create -p ${WORKING_DIR}/suppa/2.3 -c bioconda suppa=2.3 -y
 # -----------------------------------------------------------------------------
 # Others
-mamba create -p ${WORKING_DIR}/multiqc/1.14 -c bioconda multiqc=1.14 -y
+mamba create -p ${WORKING_DIR}/multiqc/1.16 -c bioconda multiqc=1.16 -y
 mamba create -p ${WORKING_DIR}/bedtools/2.31.0 -c bioconda bedtools=2.31.0 -y
 mamba create -p ${WORKING_DIR}/samtools/1.17 -c bioconda samtools=1.17 -y
-mamba create -p ${WORKING_DIR}/snakemake/7.25.4 -c bioconda snakemake=7.25.4 -y
+mamba create -p ${WORKING_DIR}/snakemake/7.32.4 -c bioconda snakemake=7.32.4 -y
 mamba create -p ${WORKING_DIR}/sambamba/1.0 -c bioconda sambamba=1.0 -y
 mamba create -p ${WORKING_DIR}/picard/3.0.0 -c bioconda picard=3.0.0 -y
 mamba create -p ${WORKING_DIR}/umi_tools/1.1.4 -c bioconda umi_tools=1.1.4 -y
@@ -52,15 +52,15 @@ mamba create -p ${WORKING_DIR}/environment-modules/5.1.1 -c bioconda environment
 # -----------------------------------------------------------------------------
 # MeRIP-seq
 mamba create -p ${WORKING_DIR}/homer/4.11 -c bioconda homer=4.11 -y
-mamba create -p ${WORKING_DIR}/macs2/2.2.7.1 -c bioconda macs2=2.2.7.1 -y
+mamba create -p ${WORKING_DIR}/macs2/2.2.9.1 -c bioconda macs2=2.2.9.1 -y
 mamba create -p ${WORKING_DIR}/meme/5.5.2 -c bioconda meme=5.5.2 -y
 mamba create -p ${WORKING_DIR}/piranha/1.2.1 -c bioconda piranha=1.2.1 -y
 # -----------------------------------------------------------------------------
 # ChIP-seq
-mamba create -p ${WORKING_DIR}/deeptools/3.5.2 -c bioconda deeptools=3.5.2 -y
+mamba create -p ${WORKING_DIR}/deeptools/3.5.4 -c bioconda deeptools=3.5.4 -y
 # -----------------------------------------------------------------------------
 # DNA methylation
-mamba create -p ${WORKING_DIR}/bismark/0.24.0 -c bioconda bismark=0.24.0 -y
+mamba create -p ${WORKING_DIR}/bismark/0.24.1 -c bioconda bismark=0.24.1 -y
 # -----------------------------------------------------------------------------
 # SNP
 mamba create -p ${WORKING_DIR}/gatk4/4.4.0.0 -c bioconda gatk4=4.4.0.0 -y
