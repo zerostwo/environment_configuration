@@ -7,21 +7,21 @@ WORKING_DIR=$1
 # 1. Genome data
 # Data download from: https://www.gencodegenes.org/
 # Human
-GENOME_DIR=${WORKING_DIR}/genome/homo_sapiens/GRCh38.p13
+GENOME_DIR=${WORKING_DIR}/genome/homo_sapiens/GRCh38.p14
 mkdir -p $GENOME_DIR
 cd $GENOME_DIR
-axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_42/GRCh38.p13.genome.fa.gz
-axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_42/gencode.v42.annotation.gtf.gz
-axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_42/gencode.v42.annotation.gff3.gz
+axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_44/GRCh38.p14.genome.fa.gz
+axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_44/gencode.v44.annotation.gtf.gz
+axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_44/gencode.v44.annotation.gff3.gz
 gzip -d ./*
 
 # Mouse
 GENOME_DIR=${WORKING_DIR}/genome/mus_musculus/GRCm39
 mkdir -p $GENOME_DIR
 cd $GENOME_DIR
-axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M31/GRCm39.genome.fa.gz
-axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M31/gencode.vM31.annotation.gtf.gz
-axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M31/gencode.vM31.annotation.gff3.gz
+axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M33/GRCm39.genome.fa.gz
+axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M33/gencode.vM33.annotation.gtf.gz
+axel -n 10 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M33/gencode.vM33.annotation.gff3.gz
 gzip -d ./*
 
 # -----------------------------------------------------------------------------
