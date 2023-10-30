@@ -6,56 +6,57 @@ GENOME_PATH=$2
 GTF_PATH=$3
 SPECIES=$4
 N_CORES=$5
-BOWTIE2_PATH=$6
+
+hisat2_build_path=/opt/hisat2/2.2.1/bin/hisat2-build
+bowtie2_build_path=/opt/bowtie2/2.5.2/bin/bowtie2-build
+kallisto_path=/opt/kallisto/0.50.0/bin/kallisto
+salmon_path=/opt/salmon/1.10.2/bin/salmon
+bismark_genome_preparation_path=/opt/bismark/0.24.2/bin/bismark_genome_preparation
+star_path=/opt/star/2.7.11a/bin/STAR
+
 # -----------------------------------------------------------------------------
 # hisat2
-module load hisat2/0.2.2
 INDEX_PATH=${WORKING_DIR}/hisat2/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
-hisat2-build -p $N_CORES $GENOME_PATH genome
+$hisat2_build_path -p $N_CORES $GENOME_PATH genome
 
 # -----------------------------------------------------------------------------
 # bowtie2
-module load bowtie2/2.5.1
 INDEX_PATH=${WORKING_DIR}/bowtie2/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
-bowtie2-build --threads $N_CORES $GENOME_PATH genome
+$bowtie2_build_path --threads $N_CORES $GENOME_PATH genome
 
 # -----------------------------------------------------------------------------
 # kallisto
-module load kallisto/0.48.0
 INDEX_PATH=${WORKING_DIR}/kallisto/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
-kallisto index $GENOME_PATH -i genome
+$kallisto_path index $GENOME_PATH -i genome
 
 # -----------------------------------------------------------------------------
 # salmon
-module load salmon/1.9.0
 INDEX_PATH=${WORKING_DIR}/salmon/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
-salmon index --threads $N_CORES -t $GENOME_PATH -i genome
+$salmon_path index --threads $N_CORES -t $GENOME_PATH -i genome
 
 # -----------------------------------------------------------------------------
 # bismark
-module load bismark/0.24.0
 INDEX_PATH=${WORKING_DIR}/bismark/$SPECIES
 mkdir -p $INDEX_PATH
 cd $INDEX_PATH
 ln -s $GENOME_PATH ./
-bismark_genome_preparation \
+$bismark_genome_preparation_path \
 	--parallel $N_CORES \
-	--path_to_aligner $BOWTIE2_PATH \
+	--path_to_aligner $bowtie2_build_path \
 	--verbose $INDEX_PATH
 
 # -----------------------------------------------------------------------------
 # star
-module load star/2.7.10b
 INDEX_PATH=${WORKING_DIR}/star/$SPECIES
-STAR \
+$star_path \
   --runThreadN $N_CORES \
   --runMode genomeGenerate \
   --genomeDir $INDEX_PATH \
