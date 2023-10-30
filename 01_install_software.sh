@@ -13,6 +13,7 @@ mamba create -p ${WORKING_DIR}/parallel-fastq-dump/0.6.7 -c bioconda parallel-fa
 # -----------------------------------------------------------------------------
 # Quality control
 mamba create -p ${WORKING_DIR}/fastp/0.23.4 -c bioconda fastp=0.23.4 -y
+mamba create -p ${WORKING_DIR}/falco/1.2.1 -c bioconda falco=1.2.1 -y
 mamba create -p ${WORKING_DIR}/fastqc/0.12.1 -c bioconda fastqc=0.12.1 -y
 mamba create -p ${WORKING_DIR}/fastq-pair/1.0 -c bioconda fastq-pair=1.0 -y
 mamba create -p ${WORKING_DIR}/fastq-screen/0.15.3 -c bioconda fastq-screen=0.15.3 -y
