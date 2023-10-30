@@ -39,28 +39,28 @@ gzip -d ./*
 REFDATA=${WORKING_DIR}/index/10x_genomics/homo_sapiens/GRCh38/
 mkdir -p $REFDATA
 cd $REFDATA
-# Human reference (GRCh38) - 2020-A
-curl -O "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz"
-# Human V(D)J reference (GRCh38)
-curl -O "https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCh38-alts-ensembl-7.1.0.tar.gz"
-# GRCh38 Reference - 2020-A-2.0.0 (May 3, 2021)
-curl -O "https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-2020-A-2.0.0.tar.gz"
-# Human reference (GRCh38) dataset required for Space Ranger.
-curl -O "https://cf.10xgenomics.com/supp/spatial-exp/refdata-gex-GRCh38-2020-A.tar.gz"
+# Human reference (GRCh38) - 2020-A, dfd654de39bff23917471e7fcc7a00cd
+axel -n 10 https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
+# Human V(D)J reference (GRCh38), 65b5b033723b07fc1bb5375e5645761c
+axel -n 10 https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCh38-alts-ensembl-7.1.0.tar.gz
+# GRCh38 Reference - 2020-A-2.0.0 (May 3, 2021), 2f12f6016197869e21e5559827002716
+axel -n 10 https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-2020-A-2.0.0.tar.gz
+# Human reference (GRCh38) dataset required for Space Ranger., 26151804338ae4d4b44151232bd64b50
+axel -n 10 https://cf.10xgenomics.com/supp/spatial-exp/refdata-gex-GRCh38-2020-A.tar.gz
 tar -xzvf ./*tar.gz
 
 REFDATA=${WORKING_DIR}/index/10x_genomics/mus_musculus/GRCm38/
 mkdir -p $REFDATA
 cd $REFDATA
-# Mouse reference (mm10) - 2020-A
-curl -O "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-mm10-2020-A.tar.gz"
-# Mouse V(D)J reference (GRCm38)
-curl -O "https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCm38-alts-ensembl-7.0.0.tar.gz"
+# Mouse reference (mm10) - 2020-A, 886eeddde8731ffb58552d0bb81f533d
+axel -n 10 https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-mm10-2020-A.tar.gz
+# Mouse V(D)J reference (GRCm38), c6f41db8f67aa83b04d64ba1ae96e681
+axel -n 10 https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCm38-alts-ensembl-7.0.0.tar.gz
 # Cell Ranger ATAC GRCh38 Reference - 2020-A-2.0.0 (May 3, 2021)
-# mm10 Reference - 2020-A-2.0.0 (May 3, 2021)
-curl -O "https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-mm10-2020-A-2.0.0.tar.gz"
-# mm10 Reference - 2020-A (June 23, 2020)
-curl -O "https://cf.10xgenomics.com/supp/spatial-exp/refdata-gex-mm10-2020-A.tar.gz"
+# mm10 Reference - 2020-A-2.0.0 (May 3, 2021), a2c1cc9b8dff2a2ef36971d7c31c8304
+axel -n 10 https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-mm10-2020-A-2.0.0.tar.gz
+# mm10 Reference - 2020-A (June 23, 2020), 24ee09ad620a9eb2753763fa068edf1f
+axel -n 10 https://cf.10xgenomics.com/supp/spatial-exp/refdata-gex-mm10-2020-A.tar.gz
 tar -xzvf ./*tar.gz
 
 # # Cell Ranger ARC - 2.0.2 (August 18, 2022)
