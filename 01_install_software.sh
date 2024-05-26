@@ -10,6 +10,7 @@ mamba create -p ${WORKING_DIR}/r/4.2.3 -c conda-forge r-base=4.2.3 r-seurat r-de
 # Download data
 # mamba create -p ${WORKING_DIR}/sratoolkit/2.5.7 -c daler sratoolkit=2.5.7 -y
 mamba create -p ${WORKING_DIR}/parallel-fastq-dump/0.6.7 -c bioconda parallel-fastq-dump=0.6.7 -y
+mamba create -p ${WORKING_DIR}/entrez-direct/21.6 -c bioconda entrez-direct=21.6 -y
 # -----------------------------------------------------------------------------
 # Quality control
 mamba create -p ${WORKING_DIR}/fastp/0.23.4 -c bioconda fastp=0.23.4 -y
